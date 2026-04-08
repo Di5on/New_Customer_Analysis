@@ -1,4 +1,3 @@
-
 DROP TABLE IF EXISTS Customers;
 
 CREATE TABLE IF NOT EXISTS Customers (
@@ -26,13 +25,17 @@ SELECT age_group, COUNT(*) FROM Customers WHERE age_group IS NULL GROUP BY age_g
 DELETE FROM Customers WHERE age_group IS NULL;
 
 --Which Gender has the highest average spending score with respect to annual income?
-SELECT gender, AVG(Spending_Score) AS Average_Spending_Score, AVG(Annual_Income) AS Average_Annual_Income FROM Customers GROUP BY gender;
+SELECT gender, AVG(Spending_Score) AS Average_Spending_Score, 
+AVG(Annual_Income) AS Average_Annual_Income FROM Customers GROUP BY gender;
 
 --Which Profession has the highest average annual income with respect to spending score?
-SELECT profession, AVG(Annual_Income) AS Average_Annual_Income, AVG(Spending_Score) AS Average_Spending_Score FROM Customers GROUP BY profession ORDER BY Average_Spending_Score DESC;
+SELECT profession, AVG(Annual_Income) AS Average_Annual_Income, 
+AVG(Spending_Score) AS Average_Spending_Score FROM Customers GROUP BY profession ORDER BY Average_Spending_Score DESC;
 
 --Which AGE GROUP has the highest average spending score with respect to annual income?
-SELECT age_group, AVG(Spending_Score) AS Average_Spending_Score, AVG(Annual_Income) AS Average_Annual_Income FROM Customers GROUP BY age_group ORDER BY Average_Spending_Score DESC;
+SELECT age_group, AVG(Spending_Score) AS Average_Spending_Score, 
+AVG(Annual_Income) AS Average_Annual_Income FROM Customers GROUP BY age_group ORDER BY Average_Spending_Score DESC;
 
 --Which Family Size has the highest average spending score with respect to annual income?
-SELECT familysize, AVG(Spending_Score) AS Average_Spending_Score, AVG(Annual_Income) AS Average_Annual_Income FROM Customers GROUP BY familysize ORDER BY Average_Spending_Score DESC;
+SELECT familysize, AVG(Spending_Score) AS Average_Spending_Score, 
+AVG(Annual_Income) AS Average_Annual_Income FROM Customers GROUP BY familysize ORDER BY Average_Spending_Score DESC;
